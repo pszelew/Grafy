@@ -1,0 +1,21 @@
+# depslib dependency file v1.0
+1556831488 source:c:\users\patryk\documents\ksi¹¿ki studia\pamsi\projekty\grafy_v2\grafy_patryk_szelewski\main.cpp
+	"main.h"
+	"lista.h"
+
+1556751636 c:\users\patryk\documents\ksi¹¿ki studia\pamsi\projekty\grafy_v2\grafy_patryk_szelewski\main.h
+	<iostream>
+	"lista.h"
+	"graf_macierz.h"
+	"graf_lista.h"
+
+1556868747 c:\users\patryk\documents\ksi¹¿ki studia\pamsi\projekty\grafy_v2\grafy_patryk_szelewski\lista.h
+	<iostream>
+	<cstdlib>
+	<string>
+
+1556871466 c:\users\patryk\documents\ksi¹¿ki studia\pamsi\projekty\grafy_v2\grafy_patryk_szelewski\graf_macierz.h
+
+1556871901 c:\users\patryk\documents\ksi¹¿ki studia\pamsi\projekty\grafy_v2\grafy_patryk_szelewski\graf_lista.h
+	"lista.h"
+
