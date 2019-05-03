@@ -15,6 +15,8 @@ private:
 	element<typ> *header; // wskaznik na pierwszy element listy
 	element<typ> *tail; // wskaznik na ostatni element listy
 public:
+    element<typ> * glowa_listy(){return header;};
+    element<typ> * ogon_listy(){return tail;};
 	lista(){header=NULL; tail=NULL;}; // konstruktor listy
 	~lista(){}; // destruktor listy
 	void dodaj(typ elem);	// dodaje element na koniec listy
@@ -61,7 +63,7 @@ typ lista<typ>::zwroc_wartosc(int pozycja)
 {   std::string wyjatek;
     if(header==NULL) //jesli lista jest pusta
     {
-        wyjatek = "Brak elementu";
+        wyjatek = "Brak polaczenia";
         throw wyjatek;
     }
     else // jesli na liscie juz cos jest
@@ -77,7 +79,7 @@ typ lista<typ>::zwroc_wartosc(int pozycja)
             return(temp->rekord);
         else
             {
-                wyjatek = "Brak elementu";
+                wyjatek = "Brak wierzcholka";
                 throw wyjatek;
             }
     }

@@ -2,7 +2,7 @@
 #ifndef MAIN_H
 #define MAIN_H
 #include <iostream>
-#include "lista.h"
+#include <fstream>
 #include "graf_macierz.h"
 #include "graf_lista.h"
 

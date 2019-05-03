@@ -33,8 +33,11 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="graf.h" />
 		<Unit filename="graf_lista.h" />
 		<Unit filename="graf_macierz.h" />
+		<Unit filename="kolejka.h" />
+		<Unit filename="kolejka_2.h" />
 		<Unit filename="lista.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="main.h" />
