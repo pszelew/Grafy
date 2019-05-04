@@ -68,7 +68,7 @@ int graf_lista::waga_krawedzi(int a, int b) //zwracamy wage krawedzi a->b
  void graf_lista::dijkstra(std::string nazwa_pliku)
  {
     std::fstream wyniki;
-    wyniki.open( nazwa_pliku, std::ios::out);
+    wyniki.open( nazwa_pliku, std::ios::out|std::ios::app);
     bool tab_QS[n]; //jesli false -> jest w Q, jesli true -> jest w S
     int tab_koszty_dojscia[n]; //tablica zawierajaca koszty przejscia
     int tab_poprzedniki[n]; //tablica poprzednikow
@@ -89,7 +89,7 @@ int graf_lista::waga_krawedzi(int a, int b) //zwracamy wage krawedzi a->b
     for(int i=0;i<n;i++)
     {
         tab_QS[i]=false;
-        tab_koszty_dojscia[i]=2147483647;
+        tab_koszty_dojscia[i]=INT_MAX;
         tab_poprzedniki[i]=-1;
         kopiec[i]=i; //wypelniamy dowolnymi wierzcholkami
         wierzcholki_kopca[i]=i; //wierzcholki ustawione po kolei
@@ -168,24 +168,26 @@ int graf_lista::waga_krawedzi(int a, int b) //zwracamy wage krawedzi a->b
 
     }
 
-    int sptr =0;
-    for(int ix = 0; ix < n; ix++)
+    swa=0;
+    for(int i = 0; i < n; i++)
     {
-        wyniki << ix << ": ";
+        wyniki <<i<<", "<< tab_koszty_dojscia[i];
+        wyniki <<", ";
 
-    // Ścieżkę przechodzimy od końca ku początkowi,
-    // Zapisując na stosie kolejne wierzchołki
+    for(int j = i; j > -1; j = tab_poprzedniki[j])
+        {
+            stos[swa] = j;
+            swa++;
+        }
+    while(swa!=0)
+    {
+        wyniki << stos[--swa];
+        if(swa>0)
+            wyniki<<", ";
+    }
+     wyniki << std::endl;
 
-    for(int jx = ix; jx > -1; jx = tab_poprzedniki[jx])
-        stos[sptr++] = jx;
 
-    // Wyświetlamy ścieżkę, pobierając wierzchołki ze stosu
-
-    while(sptr) wyniki << stos[--sptr] << " ";
-
-    // Na końcu ścieżki wypisujemy jej koszt
-
-    wyniki << "$" << tab_koszty_dojscia[ix] << std::endl;
   }
  }
 

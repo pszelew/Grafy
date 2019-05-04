@@ -5,6 +5,11 @@
 #include <fstream>
 #include "graf_macierz.h"
 #include "graf_lista.h"
+#include "test_efektywnosci.h"
+
+
+
+
 
 
 #endif

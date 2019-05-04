@@ -1,5 +1,9 @@
 #include "main.h"
 
+
+
+
+
 int main()
 {
     int n; //ilosc wierzcholkow
@@ -16,18 +20,18 @@ int main()
 
 
     dane >> m >> n >> start;
-    graf_lista graf_na_listach(n, start);    //utworzenie macierzy na listach
+    graf_macierz graf_na_macierzach(n, start);    //utworzenie macierzy na listach
 
 
     for(int i=0; i<m;i++) //wczytanie grafow
     {
         dane >> a >> b >> waga;
-        graf_na_listach.dodaj_krawedz(a, b, waga);
+        graf_na_macierzach.dodaj_krawedz(a, b, waga);
     }
 
 
 
-    graf_na_listach.dijkstra("wyniki.txt");
+    graf_na_macierzach.dijkstra("wyniki.txt");
 
 
 
