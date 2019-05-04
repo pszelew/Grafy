@@ -39,7 +39,6 @@
 		<Unit filename="lista.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="main.h" />
-		<Unit filename="test_efektywnosci.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />

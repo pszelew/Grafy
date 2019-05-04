@@ -18,6 +18,9 @@ class graf_macierz: public graf
             virtual void dodaj_krawedz(int a, int b, int waga);
             virtual void dijkstra(std::string nazwa_pliku);
             virtual int waga_krawedzi(int a, int b);
+            virtual bool czy_krawedz(int a, int b);
+            virtual int ilosc_sasiadow(int a);
+           virtual void test_efektywnosci(int ilosc_wierzcholkow, int gestosc_grafu);
 };
 
 
@@ -32,16 +35,12 @@ graf_macierz::graf_macierz(int wierzcholki, int startowy) : n(wierzcholki), star
 
 }
 
-
-
 graf_macierz::~graf_macierz()
 {
     for(int i=0; i<n; i++)
          delete[] _macierz[i];
     delete[] _macierz;
 }
-
-
 
 
 
@@ -52,6 +51,25 @@ void graf_macierz::dodaj_krawedz(int a, int b, int waga)
     _macierz[b][a]._numer=1;
     _macierz[b][a]._waga=waga;
     m++;
+}
+
+
+bool graf_macierz::czy_krawedz(int a, int b)
+{
+    if(_macierz[a][b]._numer==1)
+        return true;
+    return false;
+}
+
+int graf_macierz::ilosc_sasiadow(int a)
+{
+    int j=0;
+    for(int i=0;i<n;i++)
+    {
+        if(_macierz[a][i]._numer==1)
+            j++;
+    }
+    return j;
 }
 
 int graf_macierz::waga_krawedzi(int a, int b) //zwracamy wage krawedzi a->b
@@ -172,22 +190,76 @@ int graf_macierz::waga_krawedzi(int a, int b) //zwracamy wage krawedzi a->b
         wyniki <<i<<", "<< tab_koszty_dojscia[i];
         wyniki <<", ";
 
-    for(int j = i; j > -1; j = tab_poprzedniki[j])
+        for(int j = i; j > -1; j = tab_poprzedniki[j])
         {
             stos[swa] = j;
             swa++;
         }
-    while(swa!=0)
-    {
-        wyniki << stos[--swa];
-        if(swa>0)
-            wyniki<<", ";
+        while(swa!=0)
+        {
+            wyniki << stos[--swa];
+            if(swa>0)
+                wyniki<<", ";
+        }
+        wyniki << std::endl;
     }
-     wyniki << std::endl;
-
-
-  }
  }
+
+void graf_macierz::test_efektywnosci(int ilosc_wierzcholkow, int gestosc_grafu)
+{
+    std::fstream testy;
+    testy.open( "testy_efektywnosci_macierze.txt", std::ios::out|std::ios::app);
+    std::chrono::high_resolution_clock::time_point t1;
+    std::chrono::high_resolution_clock::time_point t2;
+    int liczba_krawedzi_docelowo=0;
+    int a,b,waga;
+    srand(time(NULL));
+    ///////////////////////////////////////////////
+    //wczytanie okreslonego grafu z pliku
+    graf_macierz temp(ilosc_wierzcholkow, 0);
+    liczba_krawedzi_docelowo=((gestosc_grafu)*ilosc_wierzcholkow*(ilosc_wierzcholkow-1))/200;
+
+    if(gestosc_grafu==100)
+    {
+        for(int i=0;i<ilosc_wierzcholkow;i++)
+        {
+            for(int j=0;j<ilosc_wierzcholkow;j++)
+            {
+                if(i!=j&&temp.czy_krawedz(i,j)==false)
+                {
+                    waga=rand()%1000;
+                    temp.dodaj_krawedz(i,j,waga);
+                }
+            }
+        }
+    }
+
+    else
+        for(int i=0;i<liczba_krawedzi_docelowo;i++)
+        {
+            do
+            {
+                a=rand()%ilosc_wierzcholkow;
+            }
+            while(temp.ilosc_sasiadow(a)==n-1);
+            do
+            {
+                b=rand()%ilosc_wierzcholkow;
+            }
+            while(b==a||temp.czy_krawedz(a,b));
+
+            waga=rand()%1000; //ustalamy wagi tylko do 1000
+            temp.dodaj_krawedz(a, b, waga);
+        }
+    /////////////////////////////////////////////
+    t1 = std::chrono::high_resolution_clock::now();
+    temp.dijkstra("wyniki_macierze.txt"); //dijkstra dla okreslonego wczesniej grafu
+    t2 = std::chrono::high_resolution_clock::now();
+
+    testy << n<< ";"<<gestosc_grafu<< ";"<<std::chrono::duration_cast<std::chrono::milliseconds>(t2 - t1).count()<<std::endl;
+
+    testy.close();
+}
 
 
 #endif

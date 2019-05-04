@@ -1,29 +1,32 @@
 # depslib dependency file v1.0
-1556954866 source:c:\users\patryk\documents\ksi¹¿ki studia\pamsi\projekty\grafy_v2\grafy_patryk_szelewski\main.cpp
+1557013783 source:c:\users\patryk\documents\ksi¹¿ki studia\pamsi\projekty\grafy_v2\grafy_patryk_szelewski\main.cpp
 	"main.h"
+	<chrono>
 
-1556891789 c:\users\patryk\documents\ksi¹¿ki studia\pamsi\projekty\grafy_v2\grafy_patryk_szelewski\main.h
+1557000468 c:\users\patryk\documents\ksi¹¿ki studia\pamsi\projekty\grafy_v2\grafy_patryk_szelewski\main.h
 	<iostream>
 	<fstream>
 	"graf_macierz.h"
 	"graf_lista.h"
 
-1556954739 c:\users\patryk\documents\ksi¹¿ki studia\pamsi\projekty\grafy_v2\grafy_patryk_szelewski\graf_macierz.h
+1557014143 c:\users\patryk\documents\ksi¹¿ki studia\pamsi\projekty\grafy_v2\grafy_patryk_szelewski\graf_macierz.h
 	"graf.h"
 
-1556905913 c:\users\patryk\documents\ksi¹¿ki studia\pamsi\projekty\grafy_v2\grafy_patryk_szelewski\graf.h
+1557009113 c:\users\patryk\documents\ksi¹¿ki studia\pamsi\projekty\grafy_v2\grafy_patryk_szelewski\graf.h
 	<fstream>
+	<chrono>
+	<iostream>
+	<fstream>
+	<string>
+	<stdlib.h>
+	<time.h>
 
-1556954081 c:\users\patryk\documents\ksi¹¿ki studia\pamsi\projekty\grafy_v2\grafy_patryk_szelewski\graf_lista.h
+1557014161 c:\users\patryk\documents\ksi¹¿ki studia\pamsi\projekty\grafy_v2\grafy_patryk_szelewski\graf_lista.h
 	"lista.h"
 	"graf.h"
-	<iostream>
-	<string>
 
 1556907359 c:\users\patryk\documents\ksi¹¿ki studia\pamsi\projekty\grafy_v2\grafy_patryk_szelewski\lista.h
 	<iostream>
 	<cstdlib>
 	<string>
-
-1556898232 c:\users\patryk\documents\ksi¹¿ki studia\pamsi\projekty\grafy_v2\grafy_patryk_szelewski\kolejka.h
 
