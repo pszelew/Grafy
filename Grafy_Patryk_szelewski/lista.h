@@ -138,7 +138,7 @@ void lista<typ>::wyczysc()
             delete(temp);
             temp=header;
         }
-
+    tail=NULL;
 }
 
 template <class typ>

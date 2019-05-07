@@ -7,6 +7,7 @@
 #include <string>
 #include <stdlib.h>
 #include <time.h>
+#include "lista.h"
 struct wezel_docelowy //wezel docelowy bedacy elementem macierzy
 {
     int _numer=0;
@@ -22,7 +23,7 @@ class graf //interfejs grafu
         virtual bool czy_krawedz(int a, int b)=0;
         virtual int ilosc_sasiadow(int a)=0;
         virtual int waga_krawedzi(int a, int b)=0;
-        virtual void test_efektywnosci(int ilosc_wierzcholkow, int gestosc_grafu)=0;
+        //virtual void test_efektywnosci(int ilosc_wierzcholkow, int gestosc_grafu)=0;
 };
 
 
