@@ -98,8 +98,8 @@ int graf_lista::waga_krawedzi(int a, int b) //zwracamy wage krawedzi a->b
     int tab_poprzedniki[n]; //tablica poprzednikow
     int x, y, z, swa; //zmienne pomocnicza
     int stos[n];
-    int kopiec[n];
-    int wierzcholki_kopca[n];
+    int kopiec[n]; //tablica na ktorej budujemy kopiec
+    int wierzcholki_kopca[n]; //przechowuje pozycje wierzcholkow w kopcu
     int dlugosc_kopca=n;
     int rodzic;
     int l_dziecko;
@@ -180,6 +180,7 @@ int graf_lista::waga_krawedzi(int a, int b) //zwracamy wage krawedzi a->b
                         rodzic = dziecko / 2;
                         if(tab_koszty_dojscia[kopiec[rodzic]] <= tab_koszty_dojscia[kopiec[dziecko]])
                             break;
+
                         swa = kopiec[rodzic];
                         kopiec[rodzic] = kopiec[dziecko];
                         kopiec[dziecko] = swa;
