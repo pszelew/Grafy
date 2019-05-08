@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1557090037 source:c:\users\patryk\documents\ksi¹¿ki studia\pamsi\projekty\grafy_v2\grafy_patryk_szelewski\main.cpp
+1557221258 source:c:\users\patryk\documents\ksi¹¿ki studia\pamsi\projekty\grafy_v2\grafy_patryk_szelewski\main.cpp
 	"main.h"
 	<chrono>
 
@@ -10,7 +10,7 @@
 	"graf_lista.h"
 	"test_efektywnosci.h"
 
-1557088959 c:\users\patryk\documents\ksi¹¿ki studia\pamsi\projekty\grafy_v2\grafy_patryk_szelewski\graf_macierz.h
+1557312417 c:\users\patryk\documents\ksi¹¿ki studia\pamsi\projekty\grafy_v2\grafy_patryk_szelewski\graf_macierz.h
 	"graf.h"
 
 1557088893 c:\users\patryk\documents\ksi¹¿ki studia\pamsi\projekty\grafy_v2\grafy_patryk_szelewski\graf.h
@@ -23,10 +23,10 @@
 	<time.h>
 	"lista.h"
 
-1557088870 c:\users\patryk\documents\ksi¹¿ki studia\pamsi\projekty\grafy_v2\grafy_patryk_szelewski\graf_lista.h
+1557092589 c:\users\patryk\documents\ksi¹¿ki studia\pamsi\projekty\grafy_v2\grafy_patryk_szelewski\graf_lista.h
 	"graf.h"
 
-1557059439 c:\users\patryk\documents\ksi¹¿ki studia\pamsi\projekty\grafy_v2\grafy_patryk_szelewski\lista.h
+1557312715 c:\users\patryk\documents\ksi¹¿ki studia\pamsi\projekty\grafy_v2\grafy_patryk_szelewski\lista.h
 	<iostream>
 	<cstdlib>
 	<string>

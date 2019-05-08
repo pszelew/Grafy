@@ -148,7 +148,7 @@ int graf_macierz::waga_krawedzi(int a, int b) //zwracamy wage krawedzi a->b
 
             wierzcholki_kopca[kopiec[rodzic]] = rodzic;
             wierzcholki_kopca[kopiec[min_idx]] = min_idx;      // na danym poziomie
-            rodzic = min_idx;              // i przechodzimy na poziom ni¿szy kopca
+            rodzic = min_idx;              // i przechodzimy na poziom nizszy kopca
         }
 
 
@@ -156,13 +156,13 @@ int graf_macierz::waga_krawedzi(int a, int b) //zwracamy wage krawedzi a->b
 
         for(int i=0; i<n;i++) //iteracja po wszystkich sasiadach wierzcholka u
         {
-            if(_macierz[x][i]._numer==1)
+            if(_macierz[x][i]._numer==1) //jesli jest sasiadem
             {
             y=i;  //numer wierzcholka sasiada -> y
             if(tab_QS[y]==false)    //jesli sasiad jest w q
             {
                 z=_macierz[x][y]._waga;
-                if(tab_koszty_dojscia[y]>((tab_koszty_dojscia[x])+(z)))
+                if(tab_koszty_dojscia[y]>((tab_koszty_dojscia[x])+(z))) //Dijkstra, modyfikacja
                 {
                     tab_koszty_dojscia[y]=tab_koszty_dojscia[x]+z;
                     tab_poprzedniki[y]=x;

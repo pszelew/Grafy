@@ -46,7 +46,7 @@ public:
 template <class typ>
 void lista<typ>::dodaj(typ elem)
 {
-    element<typ> *temp = new element<typ>(elem);
+    element<typ> *temp = new element<typ>(elem); //tworzymy element
     if(header==NULL) //jesli lista jest pusta
     {
         header = tail = temp;
@@ -101,24 +101,24 @@ void lista<typ>::usun(int pozycja)
         int j=0;
         element<typ> *temp=header;
         element<typ> *temp2=NULL;
-        while(i<pozycja&&temp->nastepny!=NULL)
+        while(i<pozycja&&temp->nastepny!=NULL) //szukamy naszego elementu do usuniecia
         {
             temp2=temp;
             temp=temp->nastepny;
             i++;
             j++;
         }
-        if(i==0)
+        if(i==0) //jesli to pierwszy element
         {
             header=header->nastepny;
             delete(temp);
         }
-        else if(i==pozycja)
+        else if(i==pozycja) //jesli znalezlismy element
         {
             temp2->nastepny=temp->nastepny;
             delete(temp);
         }
-        else
+        else //jesli nie udalo sie znalezc elementu
         {
             wyjatek="Brak usuwanego elementu";
             throw wyjatek;
